@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymealeaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/css/global.css">
+	<title>home springboot html</title>
+</head>
+
+<body>
+	<!-- header -->
+    <div th:replace="admin/common :: header"></div>
+	
+	<!-- side menu -->
+    <div class="container-fluid">
+        <div class="row">
+    		<!-- side menu -->
+    		<div th:replace="admin/common :: sidebar"></div>
+
+            <!-- Main Content -->
+            <div class="mainContent">
+				<form method="post" name="sForm" id="sForm" action="#" th:action="@{/admin/role/save}" th:object="${data}">
+					<div>
+						<h3>新增區</h3>
+						
+							<!--  Content1 -->
+							<div class="condition">
+								<div class="conditionName">
+									姓名
+								</div>
+								<div class="conditionContent">
+<!--									<input type="text" id="name" name="name" aria-describedby="basic-addon3">-->
+									<input type="text" th:field="*{name}"></input>
+								</div>
+								
+							</div>
+							<!--  Content2 -->
+							<div class="condition">
+								<div class="conditionName">
+									狀態
+								</div>
+								<div class="conditionContent">
+									<select id="status" th:field="*{status}">
+									    <option value="nodata" selected>全部</option>
+									    <option value="1">停用</option>
+									    <option value="0">啟用</option>
+	
+									</select>
+								</div>
+							
+							</div>
+
+
+
+						
+						
+					</div>
+					
+					<div class="btnSet"> 
+						<button type="submit" class="btn btn-ok mt-2">save</button>
+			      	</div>
+				</form>
+            </div>
+        </div>
+    </div>
+
+	<!-- Load jQuery first -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="/bootstrap/bootstrap.min.js"></script>	
+</body>
+
+</html>

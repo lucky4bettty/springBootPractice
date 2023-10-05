@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymealeaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/css/global.css">
+	<title>home springboot html</title>
+</head>
+
+<body>
+	<div class="login">
+		<!-- header -->
+		<div class="header">
+			<nav class="navbar navbar-light bg-light">
+			  <a class="navbar-brand" href="#">HappyGo</a>
+			</nav>
+		</div>
+		
+		<div class="loginWrap ">
+			<div class = "loginForm px-5">
+				
+				<form id="sForm" name="sForm" method="post" th:action="@{/admin/login_active}" th:object="${data}">
+					
+					<div class="input-group mb-3">
+					  <div class="input-group-prepend">
+					    <span class="input-group-text" id="inputGroup-sizing-default">帳號</span>
+					  </div>
+					  <input th:field="*{account}" type="text" name class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+					</div>
+		
+					<div class="input-group mb-3">
+					  <div class="input-group-prepend">
+					    <span class="input-group-text" id="inputGroup-sizing-default">密碼</span>
+					  </div>
+					  <input th:field="*{pwd}" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+					</div>
+					
+					<button type="submit" class="btn btn-ok">登入</button>
+
+					
+				</form>
+				
+
+				
+			</div>
+
+				
+				
+		</div>
+	</div>
+
+	
+	<script src="/bootstrap/bootstrap.min.js"></script>	
+</body>
+
+</html>

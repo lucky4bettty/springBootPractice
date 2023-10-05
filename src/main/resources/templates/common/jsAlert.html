@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<script th:inline="javascript">
+    /*<![CDATA[*/
+    /* Thymeleaf doesn't directly support JSTL tags, so we need to convert them */
+    /* JSTL equivalent to <c:if test="${not empty message}"> */
+    var message = /*[[${message}]]*/ null;
+    var relativeUrl = /*[[${relativeUrl}]]*/ null;
+    console.log('錯誤訊息');
+    console.log(message);
+	if (typeof message === "string") {
+	    alert(message);
+	} else {
+		alert(message.message)
+	}
+	
+	window.location.replace(relativeUrl);
+
+    
+
+
+
+</script>
+</body>
+</html>

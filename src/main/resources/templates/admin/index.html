@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin - Shared Index Page</title>
+    <!-- Add your common CSS and other resources here -->
+</head>
+<body>
+    <!-- Include the common navigation -->
+    <div th:replace="~{admin/nav/nav :: #root}"></div>
+
+    <!-- Content from child pages will be included here -->
+    <div th:insert="~{content}"></div>
+</body>
+</html>

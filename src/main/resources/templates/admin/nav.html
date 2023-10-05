@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymealeaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/css/global.css">
+	<title>測試用頁面</title>
+</head>
+
+<body>
+	<!-- header -->
+	<div class="header">
+		<nav class="navbar navbar-light bg-light">
+			<a class="navbar-brand" href="#">HappyGo 後台管理系統</a>
+			  <form class="form-inline">
+			    歡迎 管理者 到訪！
+			    <button class="btn btn-ok-hollow my-2 my-sm-0" type="submit">登出</button>
+			  </form>
+		</nav>
+	</div>
+	
+	<!-- side menu -->
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="sidebar">
+
+                <!-- Accordion Section -->
+                <div id="accordion">
+                    <div class="card">
+                        <div class="card-header" id="sectionOne">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    權限控管
+                                </button>
+                            </h5>
+                        </div>
+
+                        <div id="collapseOne" class="collapse" aria-labelledby="sectionOne" data-parent="#accordion">
+                            <div class="card-body">
+                                權限
+                            </div>
+                        </div>
+                    </div>
+
+<!--                    <div class="card">-->
+<!--                        <div class="card-header" id="sectionTwo">-->
+<!--                            <h5 class="mb-0">-->
+<!--                                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">-->
+<!--                                    Section 2-->
+<!--                                </button>-->
+<!--                            </h5>-->
+<!--                        </div>-->
+<!--                        <div id="collapseTwo" class="collapse" aria-labelledby="sectionTwo" data-parent="#accordion">-->
+<!--                            <div class="card-body">-->
+<!--                                Content for Section 2 goes here.-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div id="content" class="col-md-9">
+                <h1>Welcome to the Bootstrap Sidebar with Accordion Example</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sit amet quam nulla. In hac habitasse platea dictumst. Curabitur consequat nec quam a consectetur. Vivamus pulvinar vestibulum justo, nec bibendum ex auctor eget.</p>
+            </div>
+        </div>
+    </div>
+
+	<!-- Load jQuery first -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="/bootstrap/bootstrap.min.js"></script>	
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymealeaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/css/global.css">
+	<title>home springboot html</title>
+</head>
+
+<body>
+	<!-- header -->
+    <div th:replace="admin/common :: header"></div>
+	
+	<!-- side menu -->
+    <div class="container-fluid">
+        <div class="row">
+    		<!-- side menu -->
+    		<div th:replace="admin/common :: sidebar"></div>
+
+            <!-- Main Content -->
+            <div class="mainContent">
+				歡迎來到後台管理系統
+            </div>
+        </div>
+    </div>
+
+	<!-- Load jQuery first -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="/bootstrap/bootstrap.min.js"></script>	
+</body>
+
+</html>

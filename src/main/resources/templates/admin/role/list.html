@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/css/global.css">
+	<title>home springboot html</title>
+</head>
+<body>
+	
+	<!-- header -->
+    <div th:replace="admin/common :: header"></div>
+
+    <!--  -->
+    <div class="container-fluid">
+        <div class="row">
+    		<!-- side menu -->
+    		<div th:replace="admin/common :: sidebar"></div>
+
+			<!-- Main Content -->
+		    <div class="mainContent">
+				<!-- search condition -->
+				<form role="form" method="post" name="sForm" id="sForm" th:action="@{/admin/role/list}">
+					<div>
+						<h3>角色管理</h3>
+						
+						<div class="tbType">
+							<!--  Content1 -->
+							<div class="condition">
+								<div class="conditionName">
+									姓名
+								</div>
+								<div class="conditionContent">
+									<input type="text" id="name" name="name" aria-describedby="basic-addon3">
+								</div>
+								
+							</div>
+							<!--  Content2 -->
+							<div class="condition">
+								<div class="conditionName">
+									狀態
+								</div>
+								<div class="conditionContent">
+									<select id="status" name="status">
+									    <option value="" selected>全部</option>
+									    <option value="1">啟用</option>
+									    <option value="0">停用</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						
+						<div class="btnSet"> 
+					      <a href="#" onclick="$('#sForm').submit();">查詢</a> 
+					      <a href="#" class="del" onclick="location.replace('list');">清除</a> 
+				      	</div>
+					</div>
+					
+			      	
+				</form>
+				
+				<!-- search content -->
+				<div>
+					<h3>查詢結果</h3>
+					<div class="btnSet">
+						<a href="new">新增</a>
+					</div>
+<!--					<a style="cursor: pointer;" onclick="deleteMultiple();">刪除</a>-->
+
+
+					<table class="tbType" width="100%" cellspacing="0" cellpadding="0" border="0">
+						<thead>
+							<tr>
+<!--								<th> <input type="checkbox" id="all" name="all" onclick="selectAll();"/> 全選 </th>-->
+								<th> 項次 </th>
+								<th> 名稱 </th>
+								<th> 狀態 </th>
+								<th> 最後異動 </th>
+								<th> 功能 </th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="data : ${listManagers}">
+<!--								<td align="center" width="8%" th:if="${data.id != 'admin'}">-->
+<!--								    <input type="checkbox" name="ids" th:value="${data.id}" />-->
+<!--								</td>-->
+								<td>項次</td>
+								<td th:text="${data.name}"></td>
+								<td th:text="${data.status == '1' ? '啟用' : (data.status == '2' ? '停用' : '')}"></td>
+								<td th:text="${data.create_time}" pattern="yyyy-MM-dd HH:mm"></td>
+								<td align="center" width="10%">
+									<div class="tbBtn">
+										<a th:href="@{'edit/' +${data.id}}" class="edit">編輯</a>
+										<a th:href="@{'delete/' +${data.id}}" class="edit">刪除</a>
+									</div>
+
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					
+				</div>
+				
+			</div>
+			
+	    
+    	</div>
+    </div>
+    
+    
+    
+    <!-- Load jQuery first -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="/bootstrap/bootstrap.min.js"></script>	
+	<script src="/js/role.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
